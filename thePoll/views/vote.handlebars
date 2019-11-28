@@ -1,0 +1,29 @@
+<header>
+    <h1> Answer Lecturer Questions</h1>
+    <a href='/'><button name='HOME' id='btn'>HOME</button></a>
+    <a href='/graph'><button name='GRAPH' id='btn'>GRAPHS</button></a>
+</header>
+
+<div id= 'quest-container'>
+    <form id>
+        <label>Enter question:</label><br>
+        <textarea name='question' placeholder='Enter question here.' required id='question'></textarea><br>
+        <label>Number of answers:</label>
+        <input type='number' min="2" max="10" required name='ans-num' id='ansNum'>
+        <br>
+        <div id='ans-box'>
+
+        </div>
+        <input type='submit' id='btn-submit' name='sumbit' value='SUBMIT'>
+        
+    </form>
+    <script type='text/javascript'>
+        let num = document.getElementById('ansNum').value;
+        let box = document.getElementById('ans-box');
+
+        for(let i=2; i<= num; i++){
+            box.innerHTML= i;
+        }
+    </script>
+    <br>
+    
