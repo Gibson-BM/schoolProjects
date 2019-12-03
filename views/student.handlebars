@@ -1,0 +1,30 @@
+<header id="header">
+    <h1> Student Poll</h1>
+    <a href="/"><button name='HOME' id='btn'>HOME</button></a>
+    <a href="/vote"><button name="LECTURER" id="btn">LECTURER</button></a>
+    <a href="/graph"><button name='GRAPH' id='btn'>GRAPHS</button></a>
+</header>
+
+<h1>Poll:</h1>
+<div id="poll" class="container-fluid d-inline">
+    <div name="poll-container" id="poll-container">
+        Question:
+    </div>
+    <div name="graph-container" id="graph-container">
+        Graph:
+    </div>
+    <script>
+        let poll= document.getElementById("poll-container");
+        let graph= document.getElementById("graph-container");
+        let dbPath= ("/poll/database.json");
+        let data= JSON.parse(dbPath);
+
+        $(function{
+            $("poll-container").load(dbPath);
+        })
+
+        poll.innerHTML= data;
+        poll.style.border= "solid red 20px";
+
+    </script>
+</div>
