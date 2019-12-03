@@ -1,0 +1,45 @@
+<header id="header">
+    <h1> Create Question:</h1>
+    <a href='/'><button name='HOME' id='btn'>HOME</button></a>
+    <a href='/student'><button name='GRAPH' id='btn'>POLL</button></a>
+</header>
+
+<div class='container quest-container'>
+    <form id="myForm" action="/vote/voteAdd" method="post">
+        <div id="formelements">
+            <div class="form-group">
+                <label for="quest-box">Enter question:</label><br>
+                <textarea name="question-box" placeholder="Enter question here..." class="form-control" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="ans-num">Number of answers:</label>
+                <input type="number" name="ans-num" min="2" max="10"  id='ansNum' onchange= "clearBox()" required>
+                <button type="button" class="btn btn-primary" id="make-choices" onclick= "makeChoices()">OK</button>
+            </div>
+            <br>
+        </div>
+        <div id="ans-box"></div>
+        <button type="submit" class="btn btn-success btn-block" id="submit-btn">SUBMIT</button>
+    </form>
+
+</div>
+<script>
+// VARIABLE DECLARATIONS
+let box= document.getElementById("ans-box");
+let number = document.getElementById("ansNum").value;
+// CLEAR ans-box
+function clearBox(){
+    box.innerHTML= "";
+};
+
+function makeChoices() {
+        for (let i = 0; i < number; i++) {
+            let x = document.createElement("input");
+            x.setAttribute("type", "text");
+            x.setAttribute("id", "formInput");
+            x.setAttribute("name", "choice")
+            x.setAttribute("class", "inputVal")
+            box.append(x);
+        }
+    };
+</script>

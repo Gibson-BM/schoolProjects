@@ -1,0 +1,29 @@
+body{
+    background-image: url('/img/vote2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: auto;
+    height: auto;
+};
+
+#header{
+    border: black solid;
+    left: 50px;
+}
+
+#footer{
+    position: fixed;    
+    font-family: 'Exo', sans-serif;
+    left: 40px;
+}
+
+#btn{
+    border-radius: 50px;
+    font-size: 16px;
+    text-align: center;
+    border: 1px solid;
+}
+#btn:hover{
+    background-color: rgb(155, 153, 160);
+    color: #FFFFFF;
+}
